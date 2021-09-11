@@ -6,18 +6,18 @@ Instant messaging software. (Maman 15, Defensive Systems Programming).
 # Project Configuration
 ## Client
 - Client code written with ISO C++14 Standard. (Default by Visual Studio 2019).
-- Boost Library 1.75.0 is used. https://www.boost.org
+- Boost Library 1.77.0 is used. https://www.boost.org
 - Crypto++ Library 8.5 is used. https://www.cryptopp.com
 
 ## Client project configuration:
 Both libraries Boost & Crypto++ are statically built in this guide.
 
-## 1. Boost 1.75.0 Installation & Configuration
-  Boost 1.75.0 Installation Instructions are based on Pattarapol Koosalapeerom's Boost Installation Instructions.
+## 1. Boost 1.77.0 Installation & Configuration
+  Boost 1.77.0 Installation Instructions are based on Pattarapol Koosalapeerom's Boost Installation Instructions.
 
 1.1. Get Boost
-- Download the copy of Boost for Windows platform via http://www.boost.org/users/history/version_1_75_0.html. Either .7z or .zip is fine.
-- Extract the archive file to your directory of choice. Example path: "D:\boost_1_75_0"
+- Download the copy of Boost for Windows platform via http://www.boost.org/users/history/version_1_7_0.html. Either .7z or .zip is fine.
+- Extract the archive file to your directory of choice. Example path: "D:\boost_1_77_0"
 
 1.2. Complie Boost library
 - Run CMD as administrator inside boost folder.
@@ -27,9 +27,8 @@ Both libraries Boost & Crypto++ are statically built in this guide.
 
 1.3. Include Boost library in Visual Studio's C++ Project
 - Open Client's Project Properties.
-- Add "D:\boost_1_75_0" under Project > Properties > C/C++ > General > Additional Include Directories
-- Add "D:\boost_1_75_0\lib64-msvc-14.2" (or D:\boost_1_77_\stage\lib in newer version of boost),
-  under Project > Properties > Linker > General > Additional Library.
+- Add "D:\boost_1_77_0" under Project > Properties > C/C++ > General > Additional Include Directories
+- Add "D:\boost_1_77_\stage\lib under Project > Properties > Linker > General > Additional Library.
 - Define _WIN32_WINNT=0x0A00 under Project > Properties > C/C++ > Preprocessor > Preprocessor Definitions (Windows 10. For other OS see this link).
 
 ## 2. Crypto++ 8.5 Installation & Configuration

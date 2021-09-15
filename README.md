@@ -56,6 +56,7 @@ The following configurations already set within the sln. Unlike above libraries,
 hence probably shouldn't be modifed.
 - Not using precompiled headers.
 - Added additional include path $(ProjectDir)\cryptopp_wrapper\
+  (just copy and add all the headers an cpp files of cryptopp_wrapper into the Client's sources directory).
 
 
 

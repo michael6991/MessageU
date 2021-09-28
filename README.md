@@ -1,6 +1,6 @@
 # MessageU
-Instant messaging software. (Maman 15, Defensive Systems Programming)
-with end to end encryption.
+Instant messaging with end to end encryption. (Maman 15, Defensive Systems Programming)
+
 - Client code written in C++.
 - Server code written in Python.
 

@@ -317,8 +317,8 @@ void Client::handlePublicKeyRequest()
 	destCidToPubKeyMap.insert({ destClientId, destClientPubKey });
 
 
-	std::cout << "Received public key of client:" << std::endl;
-	hexify((unsigned char*)destClientId.data(), UUID_SIZE);
+	std::cout << "Received public key of client" << std::endl;
+	//hexify((unsigned char*)destClientId.data(), UUID_SIZE);
 	delete(resHead);
 }
 
@@ -960,12 +960,16 @@ void Client::handleRequestForSymmetricKey()
 
 	// receive destination client uuid + message id
 	recvBytes(UUID_SIZE);
-	std::cout << "Sent message to client: "; hexify((unsigned char*)data, UUID_SIZE);
+	std::cout << "Sent message to client" << std::endl;  //hexify((unsigned char*)data, UUID_SIZE);
 	recvBytes(MSG_ID_SIZE);
 	std::cout << "Message ID: "; hexify((unsigned char*)data, MSG_ID_SIZE);
 }
 
 
+/*
+* Receive bytes of the message header and save the unpacked header
+* parameters to their appropriate fields in Message structure
+*/
 void Client::recvAndParseMessageHeader(Message* msg)
 {
 	/* message source (client id) */
@@ -993,6 +997,9 @@ void Client::recvAndParseMessageHeader(Message* msg)
 }
 
 
+/*
+* Parse the me.info file's fileds into client's memory
+*/
 void Client::parseInfoFile(const std::string filename)
 {
 	std::string line = "";
@@ -1029,6 +1036,10 @@ void Client::parseInfoFile(const std::string filename)
 }
 
 
+/*
+* Get bytes of the response header from server and save the unpacked header
+* parameters to their appropriate fields in ResponseHeader structure
+*/
 void Client::parseResponseHeader(ResponseHeader* rh, char* arr)
 {
 	rh->serverVersion = (uint8_t)arr[0];
@@ -1042,6 +1053,9 @@ void Client::parseResponseHeader(ResponseHeader* rh, char* arr)
 }
 
 
+/*
+* opens a file for output
+*/
 std::ofstream Client::openOutFile(const std::string filename)
 {
 	std::ofstream file;
@@ -1052,6 +1066,9 @@ std::ofstream Client::openOutFile(const std::string filename)
 }
 
 
+/*
+* opens a file for input
+*/
 std::ifstream Client::openInFile(const std::string filename)
 {
 	std::ifstream file;
@@ -1357,6 +1374,9 @@ void Client::getServerInfo()
 }
 
 
+/*
+* closes socket connection to server
+*/
 void Client::close()
 {
 	socket_.close();

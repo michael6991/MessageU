@@ -65,5 +65,11 @@ hence probably shouldn't be modifed.
 - Developed with PyCharm 2021.1.2.
 - Server code written with Python 3.9.6.
 
-## Server project onfiguration
+## Server project configuration
 No special packages were required. Only the language's standard
+
+## Notes
+The whole system has a major flaw with the key exchange protocol, and is vulnerable to "Man in the Middle"
+attack. This is due to the absence of a certification mechanism between chatting parties and the server itself.
+The man in the middle can pretend to be a valid server and capture the symmetric key between two clients.
+
